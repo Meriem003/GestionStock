@@ -8,8 +8,7 @@ CREATE TABLE utilisateurs (
     user_name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     code VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'client') NOT NULL,
-    statusClient ENUM('activer', 'désactiver') NOT NULL
+    role ENUM('admin', 'client') NOT NULL
 );
 
 
@@ -18,7 +17,8 @@ CREATE TABLE produits (
     produit_name VARCHAR(255) NOT NULL,
     prix DECIMAL(8, 2) NOT NULL,
     disc VARCHAR(255) NOT NULL,
-    quantité INT NOT NULL,
+    categorie VARCHAR(100) NOT NULL,
+    quantité INT NOT NULL
 );
 
 
