@@ -1,12 +1,18 @@
-<?php
-session_start();
+<?php 
 include('../model./conn.php');
 include("../model./authe.php");
-$newObjLogin=new User($pdo);
-if (isset($_POST['submit'])) {
+$newRegesterOb=new User($pdo);
+if (isset($_POST["submit"])) {
+    $name=$_POST["name"];
     $email=$_POST["email"];
     $password=$_POST["password"];
-$newObjLogin->loginFunc($email,$password);
+
+
+try {
+    $newRegesterOb->register($name,$email,$password);
+} catch (Exception $th) {
+  echo $th->getMessage();
+}
 }
 ?>
 <!DOCTYPE html>
@@ -14,7 +20,7 @@ $newObjLogin->loginFunc($email,$password);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>register</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,8 +47,9 @@ $newObjLogin->loginFunc($email,$password);
             font-size: 28px;
             color: #333;
         }
-
-        input[type="email"], input[type="password"] {
+        input[type="name"],
+        input[type="email"],
+        input[type="text"] {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -78,17 +85,22 @@ $newObjLogin->loginFunc($email,$password);
         }
     </style>
 </head>
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form action="" method="post">
-            <input type="email" name="email" placeholder="Enter your email" ><br>
-            <input type="password" name="password" placeholder="Enter your password" ><br>
 
-            <input type="submit" name="submit" value="Login">
+<body>
+
+    <div class="login-container">
+        <h1>register</h1>
+        <form action="" method="post">
+            <input type="name" name="name" placeholder="Enter your name" required><br>
+
+            <input type="email" name="email" placeholder="Enter your email" required><br>
+            <input type="text" name="password" placeholder="Enter your password" required><br>
+
+            <input type="submit" name="submit" value="submit">
         </form>
-        <a href="register.php">go to Register</a>
+        <a href="login.php">go to login</a>
     </div>
 
 </body>
+
 </html>

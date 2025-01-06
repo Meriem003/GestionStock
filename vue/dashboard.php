@@ -1,10 +1,8 @@
-<?php
-include'./entete.php';
-include'../model./conn.php';
+<?php 
 session_start();
 if (!isset($_SESSION["userid"])||$_SESSION["role"]!=="admin") {
-  header("location:../vue/dashboard.php");
-  exit();
+header("location:login.php");
+exit();
 }else{
     echo 'you hae the acces';
 }
