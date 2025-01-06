@@ -1,5 +1,6 @@
 <?php
-include'./entete.php'
+include'./entete.php';
+include'../model./conn.php';
 ?>
 <div class="home-content">
 

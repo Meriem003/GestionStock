@@ -60,18 +60,6 @@
             <span class="links_name">Utilisateur</span>
           </a>
         </li>
-        <!-- <li>
-          <a href="#">
-            <i class="bx bx-message" ></i>
-            <span class="links_name">Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-heart" ></i>
-            <span class="links_name">Favrorites</span>
-          </a>
-        </li> -->
         <li>
           <a href="#">
             <i class="bx bx-cog"></i>

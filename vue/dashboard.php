@@ -1,5 +1,13 @@
 <?php
-include'./entete.php'
+include'./entete.php';
+include'../model./conn.php';
+session_start();
+if (!isset($_SESSION["userid"])||$_SESSION["role"]!=="admin") {
+  header("location:../vue/dashboard.php");
+  exit();
+}else{
+    echo 'you hae the acces';
+}
 ?>
 <div class="home-content">
         <div class="overview-boxes">
