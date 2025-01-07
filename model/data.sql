@@ -40,7 +40,7 @@ CREATE TABLE details_commandes (
     FOREIGN KEY (produit_id) REFERENCES produits(produit_id)
 );
 
-INSERT INTO utilisateurs (user_name, email, code, role) 
+INSERT INTO utilisateurs (user_name, email, password, role) 
 VALUES 
 ('Admin1', 'admin1@example.com', 'admin123', 'admin'),
 ('Client1', 'client1@example.com', 'client123', 'client'),

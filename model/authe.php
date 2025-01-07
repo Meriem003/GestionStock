@@ -24,10 +24,12 @@ class user{
            $_SESSION["userid"]=$myuser["user_id"];
            $_SESSION["email"]=$myuser["email"];
            $_SESSION["role"]=$myuser["role"];
-           if ($myuser["role"]=="admin") {
-            header("location:./vue./dashboard.php");
+           if ($myuser["role"]==="admin") {
+            header("location:../vue/dashboard.php");
+            exit();
            }else{
-            header("location:./vue./clien.php");
+            header("location:../vue/clien.php");
+            exit();
            }
         }
     }

@@ -1,4 +1,6 @@
-<?php 
+<?php
+include'./entete.php';
+include'../model./conn.php';
 session_start();
 if (!isset($_SESSION["userid"])||$_SESSION["role"]!=="admin") {
 header("location:login.php");
